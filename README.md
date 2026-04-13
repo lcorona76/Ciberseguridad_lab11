@@ -83,9 +83,12 @@ cp .\terraform.tfvars.example .\terraform.tfvars
    wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
    https://github.com/jphernandezdev/trivy-html-report-template
 ```
-# Ejecutar el reporte ejemplos
+# Ejemplos para ejecutar reportes
 ```Bash
 trivy image --format template --template "@./html.tpl" -o webgoat_html.html webgoat/webgoat
 trivy image --format template --template "@./enhanced-template.tpl" -o reporte2.html webgoat/webgoat
 trivy image --format template --template "@contrib/html.tpl" -o report.html golang:1.12-alpine
 ```
+- --templete ruta y nombre del templete a usar
+- -o  nombre del archivo de salida
+- por ultimo la imagen a evaluar
