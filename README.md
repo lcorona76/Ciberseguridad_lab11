@@ -13,13 +13,23 @@ Este repositorio contiene los pasos necesarios para configurar un entorno de Inf
 ```bash
    terraform -version
 ```
-# 1. Inicializar el directorio (descarga proveedores)
+Esta carpeta contiene una plantilla mínima de Terraform para crear un bucket de Amazon S3 con configuraciones predeterminadas adecuadas: control de versiones, cifrado del lado del servidor y bloqueo de acceso público.
+
+Uso rápido (PowerShell):
+
+# Copie el archivo de variables de ejemplo y establezca un nombre de bucket único:
+
+```powershell
+cp .\terraform.tfvars.example .\terraform.tfvars
+```
+
+# Inicializar el directorio
 
 ```bash
    terraform init
 ```
 
-# 2. Previsualizar los cambios
+# Previsualizar los cambios
 
 ```bash
    terraform plan
