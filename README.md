@@ -43,15 +43,10 @@ cp .\terraform.tfvars.example .\terraform.tfvars
 ```
 
 # Notas:
+   - Los nombres de los buckets de S3 deben ser únicos a nivel global en todas las cuentas de AWS.
+   - Por defecto, el acceso público está bloqueado (`block_public = true`). Establézcalo en `false` solo si comprende las implicaciones.
+   - La plantilla habilita el cifrado del lado del servidor (AES256) por defecto.
 
-<ul>
-   <li>Los nombres de los buckets de S3 deben ser únicos a nivel global en todas las cuentas de AWS.</li>
-   <li>Por defecto, el acceso público está bloqueado (`block_public = true`). Establézcalo en `false` solo si comprende las implicaciones.</li>
-   <li>La plantilla habilita el cifrado del lado del servidor (AES256) por defecto.</li>
-   <li>  </li>
-</ul>
-
-Personalización:
-- Modifique `versioning_enabled`, `force_destroy` y `sse_algorithm` en `terraform.tfvars`.
-
-- Agregue `tags` como un mapa en `terraform.tfvars`.
+# Personalización:
+   - Modifique `versioning_enabled`, `force_destroy` y `sse_algorithm` en `terraform.tfvars`.
+   - Agregue `tags` como un mapa en `terraform.tfvars`.
