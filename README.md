@@ -17,6 +17,7 @@ Esta carpeta contiene una plantilla mínima de Terraform para crear un bucket de
 
 Uso rápido (PowerShell):
 
+# Usando S3 bucket terraform templete
 # Copie el archivo de variables de ejemplo y establezca un nombre de bucket único:
 
 ```powershell
@@ -41,33 +42,16 @@ cp .\terraform.tfvars.example .\terraform.tfvars
    terraform apply
 ```
 
+# Notas:
 
-# S3 bucket Terraform template
+<ul>
+   <li>Los nombres de los buckets de S3 deben ser únicos a nivel global en todas las cuentas de AWS.</li>
+   <li>Por defecto, el acceso público está bloqueado (`block_public = true`). Establézcalo en `false` solo si comprende las implicaciones.</li>
+   <li>La plantilla habilita el cifrado del lado del servidor (AES256) por defecto.</li>
+   <li>  </li>
+</ul>
 
-This folder contains a minimal Terraform template to create an Amazon S3 bucket with sensible defaults: versioning toggle, server-side encryption, and public access block.
+Personalización:
+- Modifique `versioning_enabled`, `force_destroy` y `sse_algorithm` en `terraform.tfvars`.
 
-Quick usage (PowerShell):
-
-1. Copy the example variables file and set a unique bucket name:
-
-```powershell
-cp .\terraform.tfvars.example .\terraform.tfvars
-# Edit terraform.tfvars and set bucket_name to a globally unique value
-```
-
-2. Initialize and apply:
-
-```powershell
-terraform init
-terraform plan -var-file=terraform.tfvars
-terraform apply -var-file=terraform.tfvars
-```
-
-Notes:
-- S3 bucket names must be globally unique across all AWS accounts.
-- By default public access is blocked (`block_public = true`). Set to `false` only if you understand the implications.
-- The template enables server-side encryption (AES256) by default.
-
-Customizing:
-- Change `versioning_enabled`, `force_destroy`, and `sse_algorithm` in `terraform.tfvars`.
-- Add `tags` as a map in `terraform.tfvars`.
+- Agregue `tags` como un mapa en `terraform.tfvars`.
