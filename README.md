@@ -52,3 +52,40 @@ cp .\terraform.tfvars.example .\terraform.tfvars
    - Agregue `tags` como un mapa en `terraform.tfvars`.
 
 ## Instalando trivy
+
+# Para instalar la ultima versión:
+```Bash
+# Sitio oficial
+   https://trivy.dev/docs/latest/getting-started/installation/
+```
+# instalar complementos
+```Bash
+   sudo apt-get install wget gnupg
+```
+# Configurando repositorios
+```Bash
+   wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+   echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+```
+# Instalando paquete (en kali solo se ejecuta desde aqui)
+```Bash
+   sudo apt-get update
+   sudo apt-get install trivy
+```
+# Para evaluar un repositorio o una imegen
+```Bash
+   trivy image webgoat/webgoat
+
+   sudo trivy image --format table -o webgoat.txt webgoat/webgoat
+```
+# Para generar los reportes se requiere descargar un templete
+```Bash
+   wget https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/html.tpl
+   https://github.com/jphernandezdev/trivy-html-report-template
+```
+# Ejecutar el reporte ejemplos
+```Bash
+trivy image --format template --template "@./html.tpl" -o webgoat_html.html webgoat/webgoat
+trivy image --format template --template "@./enhanced-template.tpl" -o reporte2.html webgoat/webgoat
+trivy image --format template --template "@contrib/html.tpl" -o report.html golang:1.12-alpine
+```
