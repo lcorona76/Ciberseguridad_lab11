@@ -1,0 +1,20 @@
+## Example values for the S3 bucket template
+
+bucket_name = "lab10-bucket-secure"
+region = "us-east-1"
+versioning_enabled = true
+force_destroy = false
+block_public = true
+acl = "private"
+
+# tags = { Owner = "team-a" Environment = "dev" }
+
+# NOTE: Do NOT commit real credentials into source control. For testing you can set
+# environment variables in your PowerShell session instead of placing secrets in
+# files. Below is a generated example secret (commented) for demonstration only.
+# Replace with your real secret in a secure store or set the environment variable:
+#
+# Example generated secret (DO NOT COMMIT; shown here commented):
+# TF_VAR_aws_secret = "t8Yp3QzL9vW2sK7nB4uM6xR0hF1cV5gT3aZ8jNpQ7!"
+# TF_VAR_aws_access = "REPLACE_WITH_ACCESS_KEY"
+
