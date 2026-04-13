@@ -1,3 +1,31 @@
+# Configuración de Terraform y AWS en Windows 🚀
+
+Este repositorio contiene los pasos necesarios para configurar un entorno de Infraestructura como Código (IaC) utilizando Terraform y conectarlo con Amazon Web Services (AWS).
+
+## 1. Instalación de Herramientas 🛠️
+
+### Terraform
+1. Descarga el binario de [Terraform para Windows](https://terraform.io).
+2. Extrae el archivo `terraform.exe` en `C:\terraform`.
+3. Agrega `C:\terraform` a tus **Variables de Entorno (Path)** del sistema.
+4. Verifica la instalación en una terminal:
+   
+   ```bash
+   terraform -version
+
+
+
+# 1. Inicializar el directorio (descarga proveedores)
+terraform init
+
+# 2. Previsualizar los cambios
+terraform plan
+
+# 3. Aplicar los cambios en AWS
+terraform apply
+
+
+
 # S3 bucket Terraform template
 
 This folder contains a minimal Terraform template to create an Amazon S3 bucket with sensible defaults: versioning toggle, server-side encryption, and public access block.
