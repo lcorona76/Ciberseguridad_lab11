@@ -10,20 +10,26 @@ Este repositorio contiene los pasos necesarios para configurar un entorno de Inf
 3. Agrega `C:\terraform` a tus **Variables de Entorno (Path)** del sistema.
 4. Verifica la instalación en una terminal:
    
-   ```bash
+```bash
    terraform -version
-
-
-
+```
 # 1. Inicializar el directorio (descarga proveedores)
-terraform init
+
+```bash
+   terraform init
+```
 
 # 2. Previsualizar los cambios
-terraform plan
+
+```bash
+   terraform plan
+```
 
 # 3. Aplicar los cambios en AWS
-terraform apply
 
+```bash
+   terraform apply
+```
 
 
 # S3 bucket Terraform template
