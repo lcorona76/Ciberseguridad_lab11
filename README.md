@@ -1,4 +1,4 @@
-# Configuración de Terraform y AWS en Windows 🚀
+## Configuración de Terraform y AWS en Windows 🚀
 
 Este repositorio contiene los pasos necesarios para configurar un entorno de Infraestructura como Código (IaC) utilizando Terraform y conectarlo con Amazon Web Services (AWS).
 
@@ -50,3 +50,5 @@ cp .\terraform.tfvars.example .\terraform.tfvars
 # Personalización:
    - Modifique `versioning_enabled`, `force_destroy` y `sse_algorithm` en `terraform.tfvars`.
    - Agregue `tags` como un mapa en `terraform.tfvars`.
+
+## Instalando trivy
